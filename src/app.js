@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express');
 
 const app = express();
@@ -5,9 +6,9 @@ const app = express();
 /*******************************************************************
  ***************** home route **************************************
  *******************************************************************/
-app.get('/', (req, res) => {
-  res.send('<h1>Express App</h1>')
-});
+const publicDirectoryPath = path.join(__dirname, '../public')
+console.log(publicDirectoryPath)
+app.use(express.static(publicDirectoryPath))
 
 
 /*******************************************************************
@@ -16,15 +17,6 @@ app.get('/', (req, res) => {
 app.get('/weather', (req, res) => {
   res.send('<h1>Local Weather</h1>')
 });
-
-
-/*******************************************************************
- ***************** about route *************************************
- *******************************************************************/
-app.get('/about', (req, res) => {
-  res.send('<h1>About Weather App</h1>')
-});
-
 
 /*******************************************************************
  ***************** help route **************************************
