@@ -1,0 +1,12 @@
+body{
+  background: lightgrey;
+}
+
+h1{
+  color: grey;
+}
+
+img{
+  margin: 0 auto;
+  width: 50rem;
+}
