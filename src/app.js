@@ -1,6 +1,5 @@
 const path = require('path')
 const express = require('express');
-const hbs = require('hbs');
 
 const app = express();
 
@@ -39,7 +38,10 @@ app.get('/weather', (req, res) => {
  ***************** help route **************************************
  *******************************************************************/
 app.get('/help', (req, res) => {
-  res.send('<h1>Help</h1>')
+  res.render('help', {
+    title: 'Help',
+    message: 'this is a test message'
+  })
 });
 
 
