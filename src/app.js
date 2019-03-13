@@ -35,12 +35,6 @@ app.get('/about', (req, res) => {
   });
 })
 
-/*******************************************************************
- ***************** weather route ***********************************
- *******************************************************************/
-app.get('/weather', (req, res) => {
-  res.send('<h1>Local Weather</h1>')
-});
 
 /*******************************************************************
  ***************** help route **************************************
@@ -48,7 +42,8 @@ app.get('/weather', (req, res) => {
 app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help',
-    message: 'this is a test message'
+    message: 'this is a test message',
+    name: 'Mo Hemati'
   })
 });
 
