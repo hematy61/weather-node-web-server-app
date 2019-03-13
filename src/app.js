@@ -10,13 +10,19 @@ app.set('view engine', 'hbs');
  ***************** home route **************************************
  *******************************************************************/
 const publicDirectoryPath = path.join(__dirname, '../public')
-console.log(publicDirectoryPath)
 app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather App',
     name: 'Mo Hemati'
   })
+})
+
+/*******************************************************************
+ ***************** About route *************************************
+ *******************************************************************/
+app.get('/about', (req, res) => {
+  res.render('about');
 })
 
 /*******************************************************************
