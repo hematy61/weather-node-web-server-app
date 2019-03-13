@@ -3,7 +3,12 @@ const express = require('express');
 
 const app = express();
 
+// Define paths for express config
+const viewsPath = path.join(__dirname, '../templates/views')
+
+// set up handlebars engine and views location
 app.set('view engine', 'hbs');
+app.set('views', viewsPath);
 
 /*******************************************************************
  ***************** home route **************************************
