@@ -1,7 +1,10 @@
 const path = require('path')
 const express = require('express');
+const hbs = require('hbs');
 
 const app = express();
+
+app.set('view engine', 'hbs');
 
 /*******************************************************************
  ***************** home route **************************************
@@ -9,7 +12,9 @@ const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public')
 console.log(publicDirectoryPath)
 app.use(express.static(publicDirectoryPath))
-
+app.get('', (req, res) => {
+  res.render('index')
+})
 
 /*******************************************************************
  ***************** weather route ***********************************
