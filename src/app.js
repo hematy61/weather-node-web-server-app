@@ -47,12 +47,22 @@ app.get('/help', (req, res) => {
   })
 });
 
+app.get('/help/*', (req,res) => {
+  res.render('404', {
+    message: "This help page doesn't exist.",
+    returnMessage: "Return to Help"
+  })
+})
 
 /*******************************************************************
  ***************** 404 route **************************************
  *******************************************************************/
 app.get('*', (req, res) => {
-  res.render('404')
+  res.render('404', {
+    error: '404 error',
+    message: 'Page not found',
+    returnMessage: "Return to Home"
+  })
 })
 
 

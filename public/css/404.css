@@ -47,6 +47,7 @@ a {
   -webkit-animation: pulseColor 1000ms linear 3100ms forwards;
   animation: pulseColor 1000ms linear 3100ms forwards;
   font-weight: 500;
+  text-decoration: none;
 }
 
 a:hover b,

@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/404.css">
+  <link rel="stylesheet" href="/css/404.css">
+  <link rel="stylesheet" href="/css/common.css">
   <title>404!</title>
 </head>
 <body>
+    {{>header}}
   <main>
     <div>
       <div>
-        <span>404&nbsp;error</span>
-        <span>page&nbsp;not&nbsp;found</span>
+        <span>{{error}}</span>
+        <span>{{message}}</span>
       </div>
       <svg viewBox='0 0 200 600'>
         <polygon
@@ -32,15 +34,14 @@
         </polygon>
       </svg>
       <div>
-        <span>sorry&nbsp;about&nbsp;that!</span>
+        <span>sorry about that!</span>
         <span>
           <a href="/">
-            <b>return&nbsp;home?</b>
+            <b>{{returnMessage}}</b>
           </a>
         </span>
       </div>
     </div>
   </main>
-
 </body>
 </html>
