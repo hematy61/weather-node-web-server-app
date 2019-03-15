@@ -41,7 +41,7 @@ body {
   background: none;
 }
 
-a {
+main a {
   display: block;
   cursor: pointer;
   -webkit-animation: pulseColor 1000ms linear 3100ms forwards;
@@ -52,6 +52,19 @@ a {
 
 a:hover b,
 a:focus b {
+  color: #F04F54;
+}
+.header-links {
+  display: flex;
+  flex-direction: column;
+}
+.header-links a {
+  padding: .5rem 2rem 0 0;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+}
+.header-links a:hover {
   color: #F04F54;
 }
 

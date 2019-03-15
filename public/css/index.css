@@ -1,3 +1,5 @@
-h1 {
-  color: grey;
+
+.main-content p {
+  border: 1px pink solid;
+  text-align: center;
 }
