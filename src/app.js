@@ -55,6 +55,22 @@ app.get('/help/*', (req,res) => {
 })
 
 /*******************************************************************
+ ***************** weather route ***********************************
+ *******************************************************************/
+app.get('/weather', (req, res) => {
+  if (!req.query.address) {
+    return res.send({
+      error: 'the address query must be provided. Please send another request with an address query'
+    })
+  }
+  res.send({
+    location: req.query.address,
+    forecast: "it's snowing",
+
+  })
+})
+
+/*******************************************************************
  ***************** 404 route **************************************
  *******************************************************************/
 app.get('*', (req, res) => {
