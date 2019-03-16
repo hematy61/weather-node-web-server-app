@@ -28,7 +28,12 @@ const weather = (latitude, longitude, location,  callback) => {
       // if request goes through but location wasn't found, we are going to show this error to user. As 
       // there is an error, we sent the data undefined
     } else {
-      callback(undefined, `Currently ${location} is ${body.currently.summary} with ${body.currently.temperature} °C temperature`)
+      callback(undefined, {
+        location,
+        summary: body.currently.summary,
+        temperature: body.currently.temperature,
+        chanceOfRain: body.currently.precipProbability
+      })
       // if there is no error, we send error as undefined and data as string      
     }
   })

@@ -1,7 +1,6 @@
 const request = require('request');
 
 const keys = require('../keys.json');
-const weather = require('./weather')
 
 
 // making HTTP request to Mapbox API to get the latitude and longitude of the requested location.
@@ -43,20 +42,5 @@ const geocode = (address, callback) => {
 
 }
 
-geocode('winnipeg', (error, data) => {
-  if (error) {
-    console.log("error", error)
-  } else {
-    console.log(data.latitude, data.longitude)
-    console.log(data.location)
-    weather(data.latitude, data.longitude, data.location , (error, weatherData) => {
-      if (error) {
-        console.log(error)
-      } else {
-        console.log(weatherData)
-      }
-    })
-  }
-})
 
 module.exports = geocode

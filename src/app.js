@@ -2,6 +2,10 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+// importing modules
+const weather = require('./utils/weather')
+const geocode = require('./utils/geocode')
+
 const app = express();
 
 // Define paths for express config
@@ -63,10 +67,25 @@ app.get('/weather', (req, res) => {
       error: 'the address query must be provided. Please send another request with an address query'
     })
   }
-  res.send({
-    location: req.query.address,
-    forecast: "it's snowing",
+  console.log("line 70: ",req.query.address)
 
+  geocode(req.query.address, (error, {latitude, longitude, location}) => {
+    if (error) {
+      console.log("error line 74: ", error)
+      return res.send({ error })
+    } else {
+      console.log("line 79: ", latitude, longitude)
+      console.log("line 80: ",location)
+      weather(latitude, longitude, location, (error, weatherData) => {
+        if (error) {
+          console.log("line 83: ",error)
+          return res.send({ error })
+        } else {
+          console.log('line 88: ',weatherData)
+          return res.send({ weatherData })
+        }
+      })
+    }
   })
 })
 
