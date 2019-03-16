@@ -1,6 +1,7 @@
 const request = require('request');
 
 const keys = require('../keys.json');
+const weather = require('./weather')
 
 
 // making HTTP request to Mapbox API to get the latitude and longitude of the requested location.
@@ -23,14 +24,14 @@ const geocode = (address, callback) => {
     if(error){
       // checking for any errors coming from the request. it can be anything that cause the request
       // to be failed like "user is not connecting to internet" or "Mabbox servers are not responding"
-      // As there is an error, we sent the data undefined
+      // As there is an error, we sent the data as undefined
       callback('Unable to connect to the location service', undefined)
     } else if (body.features.length === 0) {
-      // if request goes through and location didn't found, we are going to show this error to user. As 
+      // if request goes through but location wasn't found, we are going to show this error to user. As 
       // there is an error, we sent the data undefined
       callback('Address Not Found', undefined)
     } else {
-      // if there is no error, we send error as undefined and data an object to callback function
+      // if there is no error, we send error as undefined and data as an object to callback function
       return callback(undefined, {
         longitude: body.features[0].center[0],
         latitude: body.features[0].center[1],
@@ -43,8 +44,19 @@ const geocode = (address, callback) => {
 }
 
 geocode('winnipeg', (error, data) => {
-  console.log("error", error)
-  console.log("data", data)
+  if (error) {
+    console.log("error", error)
+  } else {
+    console.log(data.latitude, data.longitude)
+    console.log(data.location)
+    weather(data.latitude, data.longitude, data.location , (error, weatherData) => {
+      if (error) {
+        console.log(error)
+      } else {
+        console.log(weatherData)
+      }
+    })
+  }
 })
 
 module.exports = geocode
