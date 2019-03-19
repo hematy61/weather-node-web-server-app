@@ -8,7 +8,7 @@ const keys = require('../keys.json');
 const weather = (latitude, longitude, location,  callback) => {
  
   // define Darksky api url to request data with 'request' package
-  const weatherURL = `https://api.darksky.net/forecast/${keys.darksky}/${latitude},${longitude}?units=si`;
+  const weatherURL = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${latitude},${longitude}?units=si`;
 
   // makig HTTP request to the defined url and set the request to respond with JSON
   request({

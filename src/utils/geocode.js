@@ -10,7 +10,7 @@ const geocode = (address, callback) => {
     address = 'Shiraz'
   }
   // define Mapbox api url to request data with 'request' package
-  const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${keys.mapbox}&limit=1`
+  const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${process.env.mapbox}&limit=1`
 
   // makig HTTP request to the defined url and set it to respond with JSON
   request({
