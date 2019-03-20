@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   color: #333333;
   margin: 0 1rem;
-  border: green 1px solid;
+  /* border: green 1px solid; */
   height: 100vh;
 }
 
@@ -16,7 +16,7 @@ a {
 }
 
 .main-content {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@ a {
 }
 
 .header {
-  border: 1px red solid;
+  /* border: 1px red solid; */
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
