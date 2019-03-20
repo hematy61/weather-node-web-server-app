@@ -16,7 +16,10 @@ input {
   font-size: 1rem;
   margin: 0 1rem 0 0;
   border-radius: 5px;
+  color: #740000;
+  outline-color: red;
 }
+
 button {
   font-size: 1.1rem;
   padding: .5rem;
@@ -24,4 +27,20 @@ button {
   color: #740000;
   border: unset;
   border-radius: 6.7px;
+}
+
+#weather_icon {
+  padding: 2rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.forecast-container {
+  display: flex;
+}
+
+.forcast-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
