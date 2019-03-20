@@ -1,7 +1,5 @@
 const request = require('request');
 
-const keys = require('../keys.json');
-
 
 // making HTTP request to Mapbox API to get the latitude and longitude of the requested location.
 const geocode = (address, callback) => {
@@ -10,7 +8,7 @@ const geocode = (address, callback) => {
     address = 'Shiraz'
   }
   // define Mapbox api url to request data with 'request' package
-  const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${process.env.mapbox}&limit=1`
+  const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${process.env.MAPBOX_API_KEY}&limit=1`
 
   // makig HTTP request to the defined url and set it to respond with JSON
   request({
@@ -19,7 +17,7 @@ const geocode = (address, callback) => {
   }, (error, { body = {} }) => {
     // request callback function which receive 3 arguments: error, res, and body. By destructuring "res" and removing
     // body as it's optional, it is simplified from (error, res, body) to (error, { body = {}})
-
+    console.log(body)
     if(error){
       // checking for any errors coming from the request. it can be anything that cause the request
       // to be failed like "user is not connecting to internet" or "Mabbox servers are not responding"

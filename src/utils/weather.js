@@ -1,7 +1,6 @@
 
 const request = require("request");
 
-const keys = require('../keys.json');
 
 // define a weather module to request weather data from darksky api with the latitude and longitude info
 // that has passed into from geocode module. 
