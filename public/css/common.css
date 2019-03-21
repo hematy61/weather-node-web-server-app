@@ -4,9 +4,8 @@ body {
   flex-direction: column;
   color: #333333;
   margin: 0 1rem;
-  /* border: green 1px solid; */
+  border: green 1px solid;
   height: 100vh;
-  max-width: 1200px;
 }
 
 .header a {
