@@ -9,13 +9,37 @@ body {
   max-width: 1200px;
 }
 
-a {
+.header a {
   text-decoration: none;
   color: #888888;
   font-size: 1.3rem;
   margin: .5rem 1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #888888;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #740000;
+  opacity: 0.5;
+}
+
+/* hiding placeholder text when user clicks on input -------------  */
+input:focus::placeholder {
+  /* Firefox 18- */
+  color: transparent;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease-in-out;
+}
+
+
+/* ---------------------------------------------------------------- */
 .main-content {
   /* border: 3px solid black; */
   flex-grow: 1;

@@ -4,3 +4,8 @@ img{
   margin: 0 auto;
   width: 15rem;
 }
+
+.main-content p {
+  margin:3rem;
+  text-align: center;
+}
