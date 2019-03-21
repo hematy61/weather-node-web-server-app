@@ -6,6 +6,7 @@ body {
   margin: 0 1rem;
   /* border: green 1px solid; */
   height: 100vh;
+  max-width: 1200px;
 }
 
 a {
@@ -21,6 +22,7 @@ a {
   display: flex;
   flex-direction: column;
   align-content: center;
+  padding: 0 3rem;
 }
 
 .header {
@@ -46,6 +48,6 @@ a {
 }
 
 .footer {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #c0bebe;
   color: #888888;
 }
