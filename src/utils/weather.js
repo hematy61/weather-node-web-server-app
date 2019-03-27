@@ -32,7 +32,8 @@ const weather = (latitude, longitude, location,  callback) => {
         summary: body.currently.summary,
         temperature: body.currently.temperature,
         chanceOfRain: body.currently.precipProbability,
-        icon: body.currently.icon
+        icon: body.currently.icon,
+        feelsLike: body.currently.apparentTemperature
       })
       // if there is no error, we send error as undefined and data as string      
     }
