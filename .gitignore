@@ -2,3 +2,14 @@
 .vscode
 heroku_config_vars.env
 config
+.gitignore
+Cloud.svg
+AirPressure.svg
+background-sunset.png
+ChanceOfRain.svg
+HumidityArtboard.svg
+LeftArrow.svg
+LeftArrowWithCircle.svg
+RightArrow.svg
+RightArrowWithCircle.svg
+WindSpeed.svg
