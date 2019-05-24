@@ -1,0 +1,47 @@
+body,
+html {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica neue', sans-serif;
+}
+
+.main-content {
+  background: #b997b2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-mask {
+  /* border: 1px solid red; */
+  border-radius: 25px;
+  width: 80vw;
+  height: 60vh;
+  background: #000000;
+  /* For browsers that do not support gradients */
+  background: radial-gradient(closest-side at 60% 55%, #565656, black);
+  /* Standard syntax (must be last) */
+}
+
+.background {
+  /* border: 1px solid blue; */
+  border-radius: 25px;
+  background: url('../assets/background-sunset.png') no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 94%;
+  width: 91.5%;
+  border: 9px solid #96969666;
+  border-radius: 21px;
+  padding: .5rem 2rem;
+}
