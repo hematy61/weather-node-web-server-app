@@ -84,3 +84,29 @@ html {
   padding: .5rem 0 0 1rem;
   font-size: 2rem;
 }
+/* ---------- Search Display ------------ */
+.search-display {
+  /* border: 1px solid purple; */
+  width: 50%;
+}
+
+.search-box {
+  background: #ffffff00;
+  height: 2rem;
+  margin: 2rem 0 0 2rem;
+  width: 60%;
+  border: 1px solid white;
+  border-radius: 15px;
+  color: white;
+  padding: 5px 5px 5px 14px;
+  font-size: 1rem;
+}
+
+input {
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+input:focus {
+  outline: unset;
+}
