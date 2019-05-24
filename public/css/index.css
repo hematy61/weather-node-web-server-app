@@ -110,3 +110,67 @@ input {
 input:focus {
   outline: unset;
 }
+/* ---------- Top Right Display ------------ */
+.top-right-display {
+  /* border: 1px solid orange; */
+  color: white;
+  font-weight: 100;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top-left-tile {
+  width: 50%;
+  padding-top: 1rem;
+}
+
+.condition {
+  padding: 0.5rem 1rem;
+}
+
+.sub-condition {
+  display: flex;
+  align-items: center;
+}
+
+.sub-condition-icon1 {
+  background: url(../assets/HumidityArtboard.svg) no-repeat top left;
+}
+
+.sub-condition-icon2 {
+  background: url(../assets/ChanceOfRain.svg) no-repeat top left;
+}
+
+.sub-condition-icon3 {
+  background: url(../assets/WindSpeed.svg) no-repeat top left;
+}
+
+.sub-condition-icon4 {
+  background: url(../assets//AirPressure.svg) no-repeat top left;
+}
+
+.sub-condition-icon {
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.sub-condition-value {
+  font-weight: 600;
+}
+
+.top-right-tile {
+  width: 50%;
+  padding-top: 1rem;
+}
+
+.bottom-left-tile {
+  width: 50%;
+  padding-top: 1rem;
+}
+
+.bottom-right-tile {
+  width: 50%;
+  padding-top: 1rem;
+}
