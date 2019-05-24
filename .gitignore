@@ -3,8 +3,3 @@
 heroku_config_vars.env
 config
 .gitignore
-background-sunset.png
-LeftArrow.svg
-LeftArrowWithCircle.svg
-RightArrow.svg
-RightArrowWithCircle.svg

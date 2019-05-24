@@ -206,3 +206,29 @@ input:focus {
   width: 45%;
   text-align: end;
 }
+/********************************************************************* hours Display ***********/
+.hours-display {
+  /* border: 1px solid green; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hours-display-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  width: 60%;
+}
+
+.hours-display-right-arrow {
+  background: url(../assets/RightArrowWithCircle.svg) no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+.hours-display-left-arrow {
+  background: url(../assets/LeftArrowWithCircle.svg) no-repeat;
+  width: 40px;
+  height: 40px;
+}
