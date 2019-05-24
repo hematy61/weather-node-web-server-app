@@ -23,6 +23,8 @@ html {
   /* For browsers that do not support gradients */
   background: radial-gradient(closest-side at 60% 55%, #565656, black);
   /* Standard syntax (must be last) */
+  min-height: 635px;
+
 }
 
 .background {
@@ -39,8 +41,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  height: 94%;
-  width: 91.5%;
+  height: 95.2%;
   border: 9px solid #96969666;
   border-radius: 21px;
   padding: .5rem 2rem;
