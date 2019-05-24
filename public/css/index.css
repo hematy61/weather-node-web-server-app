@@ -174,3 +174,35 @@ input:focus {
   width: 50%;
   padding-top: 1rem;
 }
+/********************************************************************* Days Display ***********/
+.days-display {
+  /* border: 1px solid black; */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.days-display-left-arrow {
+  background: url(../assets/LeftArrow.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0.5rem;
+}
+
+.days-display-right-arrow {
+  background: url(../assets/RightArrow.svg) no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0.5rem;
+}
+
+.days-display-previous-day {
+  color: white;
+  width: 45%;
+}
+
+.days-display-next-day {
+  color: white;
+  width: 45%;
+  text-align: end;
+}
