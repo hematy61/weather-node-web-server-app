@@ -232,3 +232,25 @@ input:focus {
   width: 40px;
   height: 40px;
 }
+/* ----------------------------------- hourly tiles */
+.hourly-tiles {
+  color: white;
+  margin: 0 auto;
+}
+
+.hourly-tile {
+  padding: 0 .5rem;
+  width: 10.2%;
+  display: inline-block;
+}
+
+.hour,
+.hourly-tile-feels-like {
+  font-weight: 100;
+  padding: 1rem 0;
+}
+
+.hourly-tile-temp {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
