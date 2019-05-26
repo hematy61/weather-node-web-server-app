@@ -70,7 +70,7 @@ html {
   height: 50%;
 }
 
-.top-left-display-weather {
+.top-left-display-date {
   padding: 0 0 0 1rem;
   font-weight: 800;
   font-size: 2rem;
@@ -83,7 +83,8 @@ html {
 
 .top-left-display-temp {
   padding: .5rem 0 0 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
+  font-weight: 200;
 }
 /* ---------- Search Display ------------ */
 .search-display {
