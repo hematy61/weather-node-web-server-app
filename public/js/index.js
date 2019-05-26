@@ -17,10 +17,13 @@ const days_display_right_arrow = document.querySelector('.days-display-right-arr
 const days_display_next_day = document.querySelector('.days-display-next-day')
 const days_display_previous_day = document.querySelector('.days-display-previous-day')
 
+
+
 let receivedData = {}
-let todayInDigit = 0;
+let todayInDigit = 0
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
+// -------------------------------------------------- Fetching data from our NodeJS Restful API
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const location = search.value;
@@ -33,16 +36,20 @@ weatherForm.addEventListener('submit', (e) => {
         summary_display.textContent = `${data.error}`
       } else {
         receivedData = data.weatherData
-        console.log(receivedData)
+        console.log(receivedData.body.hourly)
         updateScreen(receivedData.location, receivedData.body.daily.data[0])
         days_display_right_arrow.style.display = `unset`
         days_display_next_day.style.display = `unset`
         days_display_next_day.textContent = `${weekdays[todayInDigit + 1]}`
+
+        
+        get_hours()
+
       }
     })
 })
 
-
+// -------------------------------------------------- Update Screen on left arrow clicks
  days_display_left_arrow.addEventListener('click', (e) => {
    if ( (todayInDigit - 1) > 0) {
      todayInDigit--
@@ -56,7 +63,7 @@ weatherForm.addEventListener('submit', (e) => {
 
    }
  })
-
+// -------------------------------------------------- Update Screen on right arrow clicks
  days_display_right_arrow.addEventListener('click', (e) => {
   if ( (todayInDigit + 1) < (receivedData.body.daily.data.length - 2) ) {
     todayInDigit++
@@ -68,11 +75,14 @@ weatherForm.addEventListener('submit', (e) => {
   }
  })
 
+// --------------------------------------------------  Hourly screen update
+
+
+// -------------------------------------------------- Common functions
  const updateScreen = (location, data) => {
    console.log(location, data)
   top_left_display_icon.style.background = `url(../assets/${data.icon}.svg) no-repeat top left`
   top_left_display_icon.style.backgroundSize = `contain`
-  console.log('todayInDigit from updateScreen: ', todayInDigit)
   top_left_display_date.textContent = `${weekdays[todayInDigit]}`
   top_left_display_city.textContent = location
   top_left_display_temp.innerHTML = `
@@ -87,4 +97,23 @@ weatherForm.addEventListener('submit', (e) => {
   sub_condition_value4.textContent = `${data.pressure} PS`
  }
 
- const get_date = (today) => {}
+ const get_hours = () => {
+   let hourArray = []
+   receivedData.body.hourly.data.forEach(element => {
+     let hour = undefined
+     let hourString = undefined
+     hour = new Date(element.time * 1000).getHours()
+     if (hour === 0) {
+       hourString = `12 A.M.`
+     } else if (0 < hour && hour < 12) {
+       hourString = `${hour} A.M.`
+     } else if (hour === 12) {
+       hourString = `12 P.M`
+     } else if (12 < hour && hour < 24) {
+       hourString = `${hour - 12} P.M`
+     }
+     hourArray.push(hourString)
+   });
+   console.log(hourArray)
+   return hourArray
+ }
