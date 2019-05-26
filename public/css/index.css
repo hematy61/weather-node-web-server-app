@@ -106,10 +106,10 @@ html {
 }
 
 #summary-display {
-  color: #ca9b6e;
+  color: #ffffffab;
   font-weight: 200;
-  font-size: 2rem;
-  margin: 2rem 0 0 2rem; 
+  font-size: 1.5rem;
+  margin: 2rem 2rem 0 2rem; 
 }
 
 input {

@@ -1,18 +1,16 @@
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const summary_display = document.querySelector('#summary-display');
+
 const top_left_display_icon = document.querySelector('.top-left-display-icon')
 const top_left_display_weather = document.querySelector('.top-left-display-weather')
 const top_left_display_city = document.querySelector('.top-left-display-city')
 const top_left_display_temp = document.querySelector('.top-left-display-temp')
-const sub_condition_icon1 = document.querySelector('.sub-condition-icon1')
-const sub_condition_icon2 = document.querySelector('.sub-condition-icon2')
-const sub_condition_icon3 = document.querySelector('.sub-condition-icon3')
-const sub_condition_icon4 = document.querySelector('.sub-condition-icon4')
-const sub_condition_value1 = document.querySelector('.sub-condition-value1')
-const sub_condition_value2 = document.querySelector('.sub-condition-value2')
-const sub_condition_value3 = document.querySelector('.sub-condition-value3')
-const sub_condition_value4 = document.querySelector('.sub-condition-value4')
+
+const sub_condition_value1 = document.querySelector('#sub-condition-value1')
+const sub_condition_value2 = document.querySelector('#sub-condition-value2')
+const sub_condition_value3 = document.querySelector('#sub-condition-value3')
+const sub_condition_value4 = document.querySelector('#sub-condition-value4')
 
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -34,7 +32,11 @@ weatherForm.addEventListener('submit', (e) => {
         top_left_display_weather.textContent = body.currently.summary
         top_left_display_city.textContent = location
         top_left_display_temp.textContent = `${body.currently.temperature}°C`
-        
+        summary_display.textContent = `${body.daily.summary}`
+        sub_condition_value1.textContent = `${body.currently.humidity * 100} %`
+        sub_condition_value2.textContent = `${body.currently.precipProbability * 100} %`
+        sub_condition_value3.textContent = `${(body.currently.windSpeed * 1.609).toFixed(2)} km/h`
+        sub_condition_value4.textContent = `${body.currently.pressure} PS`
       }
     })
 })
