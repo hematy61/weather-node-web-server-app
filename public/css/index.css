@@ -110,6 +110,7 @@ html {
   font-weight: 200;
   font-size: 1.5rem;
   margin: 2rem 2rem 0 2rem; 
+  line-height: 2.5rem;
 }
 
 input {
@@ -190,6 +191,7 @@ input:focus {
   flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .days-display-left-arrow {
@@ -197,6 +199,7 @@ input:focus {
   width: 20px;
   height: 20px;
   margin: 0.5rem;
+  display: none;
 }
 
 .days-display-right-arrow {
@@ -204,6 +207,7 @@ input:focus {
   width: 20px;
   height: 20px;
   margin: 0.5rem;
+  display: none;
 }
 
 .days-display-previous-day {

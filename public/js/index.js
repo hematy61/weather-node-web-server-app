@@ -12,6 +12,13 @@ const sub_condition_value2 = document.querySelector('#sub-condition-value2')
 const sub_condition_value3 = document.querySelector('#sub-condition-value3')
 const sub_condition_value4 = document.querySelector('#sub-condition-value4')
 
+const days_display_left_arrow = document.querySelector('.days-display-left-arrow')
+const days_display_right_arrow = document.querySelector('.days-display-right-arrow')
+const days_display_next_day = document.querySelector('.days-display-next-day')
+
+const data = {}
+const weekdays = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const location = search.value;
@@ -27,16 +34,39 @@ weatherForm.addEventListener('submit', (e) => {
           location,
           body
         } = data.weatherData
-        top_left_display_icon.style.background = `url(../assets/${body.currently.icon}.svg) no-repeat top left`
-        top_left_display_icon.style.backgroundSize = `contain`
-        top_left_display_weather.textContent = body.currently.summary
-        top_left_display_city.textContent = location
-        top_left_display_temp.textContent = `${body.currently.temperature}°C`
-        summary_display.textContent = `${body.daily.summary}`
-        sub_condition_value1.textContent = `${body.currently.humidity * 100} %`
-        sub_condition_value2.textContent = `${body.currently.precipProbability * 100} %`
-        sub_condition_value3.textContent = `${(body.currently.windSpeed * 1.609).toFixed(2)} km/h`
-        sub_condition_value4.textContent = `${body.currently.pressure} PS`
+        data = {location, body}
+        console.log(data)
+        updateScreen(data)
+        days_display_right_arrow.style.display = `unset`
+        days_display_next_day.style.display = `unset`
+        const tomorrow = new Date(body.daily.data[0].time * 1000).getDay()
+        days_display_next_day.textContent = `${weekdays[tomorrow]}`
       }
     })
 })
+
+
+ days_display_left_arrow.addEventListener('click', (e) => {
+   const newData = 
+   updateScreen()
+ })
+ days_display_right_arrow.addEventListener('click', (e) => {
+   updateScreen()
+ })
+
+ const updateScreen = (data) => {
+  top_left_display_icon.style.background = `url(../assets/${data.body.currently.icon}.svg) no-repeat top left`
+  top_left_display_icon.style.backgroundSize = `contain`
+  top_left_display_weather.textContent = data.body.currently.summary
+  top_left_display_city.textContent = data.location
+  top_left_display_temp.textContent = `${data.body.currently.temperature}°C`
+
+  summary_display.textContent = `${data.body.daily.summary}`
+
+  sub_condition_value1.textContent = `${data.body.currently.humidity * 100} %`
+  sub_condition_value2.textContent = `${data.body.currently.precipProbability * 100} %`
+  sub_condition_value3.textContent = `${(data.body.currently.windSpeed * 1.609).toFixed(2)} km/h`
+  sub_condition_value4.textContent = `${data.body.currently.pressure} PS`
+ }
+
+ const get_date = (today) => {}
