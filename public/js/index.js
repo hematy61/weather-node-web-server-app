@@ -29,8 +29,12 @@ weatherForm.addEventListener('submit', (e) => {
           location,
           body
         } = data.weatherData
+        top_left_display_icon.style.background = `url(../assets/${body.currently.icon}.svg) no-repeat top left`
+        top_left_display_icon.style.backgroundSize = `contain`
+        top_left_display_weather.textContent = body.currently.summary
         top_left_display_city.textContent = location
-
+        top_left_display_temp.textContent = `${body.currently.temperature}°C`
+        
       }
     })
 })

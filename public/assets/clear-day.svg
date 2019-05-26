@@ -1,0 +1,13 @@
+<svg viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="clear-day" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#FFFFFF" cx="25" cy="25" r="12"></circle>
+        <path d="M11.7,11.8 L13.7,13.8" id="Line" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M36,36 L38.2,38.2" id="Line-Copy-5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M24.9550781,6.3 L24.9550781,9.3" id="Line-Copy-3" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M24.9,40.8 L24.9,44" id="Line-Copy-6" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M11.5422861,35.9554393 L14.0195879,38.2942626" id="Line-Copy-2" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(12.780937, 37.124851) rotate(-88.353023) translate(-12.780937, -37.124851) "></path>
+        <path d="M35.7267318,11.9004727 L38.2102231,13.9658362" id="Line-Copy-4" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(36.968477, 12.933154) rotate(-85.000000) translate(-36.968477, -12.933154) "></path>
+        <path d="M6.25,25 L9.15,25" id="Line-Copy" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M40.5,25 L43.5,25" id="Line-Copy-7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+    </g>
+</svg>

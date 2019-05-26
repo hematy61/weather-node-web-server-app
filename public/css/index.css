@@ -64,7 +64,7 @@ html {
 }
 
 .top-left-display-icon {
-  background: url(../assets/Cloud.svg) no-repeat top left;
+  /* background: url(../assets/Cloud.svg) no-repeat top left; */
   background-size: contain;
   width: 70%;
   height: 50%;
