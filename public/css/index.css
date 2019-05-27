@@ -128,7 +128,7 @@ input:focus {
   color: white;
   font-weight: 100;
   width: 30%;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
 }
 
@@ -237,12 +237,14 @@ input:focus {
 }
 
 .hours-display-right-arrow {
+  display: none;
   background: url(../assets/RightArrowWithCircle.svg) no-repeat;
   width: 40px;
   height: 40px;
 }
 
 .hours-display-left-arrow {
+  display: none;
   background: url(../assets/LeftArrowWithCircle.svg) no-repeat;
   width: 40px;
   height: 40px;

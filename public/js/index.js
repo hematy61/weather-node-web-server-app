@@ -12,6 +12,8 @@ const sub_condition_value2 = document.querySelector('#sub-condition-value2')
 const sub_condition_value3 = document.querySelector('#sub-condition-value3')
 const sub_condition_value4 = document.querySelector('#sub-condition-value4')
 
+const top_right_display = document.querySelector('.top-right-display')
+
 const days_display_left_arrow = document.querySelector('.days-display-left-arrow')
 const days_display_right_arrow = document.querySelector('.days-display-right-arrow')
 const days_display_next_day = document.querySelector('.days-display-next-day')
@@ -49,6 +51,8 @@ weatherForm.addEventListener('submit', (e) => {
         days_display_right_arrow.style.display = `unset`
         days_display_next_day.style.display = `unset`
         days_display_next_day.textContent = `${weekdays[todayInDigit + 1]}`
+
+        top_right_display.style.display = 'flex'
 
         updateHourlyDisplay(receivedData.body.hourly.data.slice(undefined, 8))
 
