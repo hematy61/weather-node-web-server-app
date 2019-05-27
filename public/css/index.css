@@ -250,7 +250,9 @@ input:focus {
 /* ----------------------------------- hourly tiles */
 .hourly-tiles {
   color: white;
-  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
 }
 
 .hourly-tile {

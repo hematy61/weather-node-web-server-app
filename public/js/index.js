@@ -19,6 +19,14 @@ const days_display_previous_day = document.querySelector('.days-display-previous
 
 
 
+const hours_display = document.querySelector('.hours-display')
+const hours_display_arrows = hours_display.children[0].querySelectorAll('a')
+const hourly_tile_hour_display = hours_display.children[1].querySelectorAll('.hour')
+const hourly_tile_temp_display = hours_display.children[1].querySelectorAll('.hourly-tile-temp')
+const hourly_tile_feelsLike_display = hours_display.children[1].querySelectorAll('.hourly-tile-feels-like')
+console.log(hourly_tile_temp_display)
+
+
 let receivedData = {}
 let todayInDigit = 0
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -42,8 +50,7 @@ weatherForm.addEventListener('submit', (e) => {
         days_display_next_day.style.display = `unset`
         days_display_next_day.textContent = `${weekdays[todayInDigit + 1]}`
 
-        
-        get_hours()
+        updateHourlyDisplay(receivedData.body.hourly.data.slice(undefined, 8))
 
       }
     })
@@ -76,7 +83,17 @@ weatherForm.addEventListener('submit', (e) => {
  })
 
 // --------------------------------------------------  Hourly screen update
-
+const updateHourlyDisplay = (hourlyData) => {
+  console.log('hourlyData: ', hourlyData)
+  hourlyData.forEach((eachHourData, index) => {
+    hourly_tile_hour_display[index].textContent = `${get_hours(eachHourData.time)}`
+    hourly_tile_temp_display[index].textContent = `${eachHourData.temperature.toFixed(1)} °C`
+    hourly_tile_feelsLike_display[index].innerHTML = `
+      <p>Feels Like</p>
+      <p>${eachHourData.apparentTemperature.toFixed(1)} °C</p>
+      `
+  })
+}
 
 // -------------------------------------------------- Common functions
  const updateScreen = (location, data) => {
@@ -97,12 +114,10 @@ weatherForm.addEventListener('submit', (e) => {
   sub_condition_value4.textContent = `${data.pressure} PS`
  }
 
- const get_hours = () => {
-   let hourArray = []
-   receivedData.body.hourly.data.forEach(element => {
+ const get_hours = (timeStamp) => {
      let hour = undefined
      let hourString = undefined
-     hour = new Date(element.time * 1000).getHours()
+     hour = new Date(timeStamp * 1000).getHours()
      if (hour === 0) {
        hourString = `12 A.M.`
      } else if (0 < hour && hour < 12) {
@@ -112,8 +127,6 @@ weatherForm.addEventListener('submit', (e) => {
      } else if (12 < hour && hour < 24) {
        hourString = `${hour - 12} P.M`
      }
-     hourArray.push(hourString)
-   });
-   console.log(hourArray)
-   return hourArray
+     console.log('hourString: ', hourString)
+   return hourString
  }
